@@ -1,0 +1,201 @@
+{
+  "users": [
+    {
+      "id": "usr-prof-1",
+      "name": "Prof. Alan Smith",
+      "email": "prof.smith@joineazy.edu",
+      "password": "$2a$10$gGn/lKUqQzhqtPMRuJYPO.m9TqbfO3f4fluAlutY8NpgVXSZLiA5i",
+      "role": "ADMIN",
+      "student_id": null,
+      "created_at": "2026-08-23T03:55:58.808Z"
+    },
+    {
+      "id": "usr-prof-2",
+      "name": "Prof. Eleanor Vance",
+      "email": "prof.vance@joineazy.edu",
+      "password": "$2a$10$gGn/lKUqQzhqtPMRuJYPO.m9TqbfO3f4fluAlutY8NpgVXSZLiA5i",
+      "role": "ADMIN",
+      "student_id": null,
+      "created_at": "2026-08-23T03:55:58.813Z"
+    },
+    {
+      "id": "usr-stu-1",
+      "name": "Alex Johnson",
+      "email": "alex.johnson@joineazy.edu",
+      "password": "$2a$10$gGn/lKUqQzhqtPMRuJYPO.m9TqbfO3f4fluAlutY8NpgVXSZLiA5i",
+      "role": "STUDENT",
+      "student_id": "STU1001",
+      "created_at": "2026-08-23T03:55:58.813Z"
+    },
+    {
+      "id": "usr-stu-2",
+      "name": "Sarah Connor",
+      "email": "sarah.connor@joineazy.edu",
+      "password": "$2a$10$gGn/lKUqQzhqtPMRuJYPO.m9TqbfO3f4fluAlutY8NpgVXSZLiA5i",
+      "role": "STUDENT",
+      "student_id": "STU1002",
+      "created_at": "2026-08-23T03:55:58.813Z"
+    },
+    {
+      "id": "usr-stu-3",
+      "name": "David Kim",
+      "email": "david.kim@joineazy.edu",
+      "password": "$2a$10$gGn/lKUqQzhqtPMRuJYPO.m9TqbfO3f4fluAlutY8NpgVXSZLiA5i",
+      "role": "STUDENT",
+      "student_id": "STU1003",
+      "created_at": "2026-08-23T03:55:58.814Z"
+    },
+    {
+      "id": "usr-stu-4",
+      "name": "Emily Davis",
+      "email": "emily.davis@joineazy.edu",
+      "password": "$2a$10$gGn/lKUqQzhqtPMRuJYPO.m9TqbfO3f4fluAlutY8NpgVXSZLiA5i",
+      "role": "STUDENT",
+      "student_id": "STU1004",
+      "created_at": "2026-08-23T03:55:58.814Z"
+    },
+    {
+      "id": "usr-stu-5",
+      "name": "Michael Brown",
+      "email": "michael.brown@joineazy.edu",
+      "password": "$2a$10$gGn/lKUqQzhqtPMRuJYPO.m9TqbfO3f4fluAlutY8NpgVXSZLiA5i",
+      "role": "STUDENT",
+      "student_id": "STU1005",
+      "created_at": "2026-08-23T03:55:58.814Z"
+    },
+    {
+      "id": "usr-stu-6",
+      "name": "Jessica Taylor",
+      "email": "jessica.taylor@joineazy.edu",
+      "password": "$2a$10$gGn/lKUqQzhqtPMRuJYPO.m9TqbfO3f4fluAlutY8NpgVXSZLiA5i",
+      "role": "STUDENT",
+      "student_id": "STU1006",
+      "created_at": "2026-08-23T03:55:58.815Z"
+    }
+  ],
+  "groups": [
+    {
+      "id": "grp-1",
+      "name": "Team CyberPulse",
+      "code": "GRP-CYBER",
+      "created_by": "usr-stu-1",
+      "created_at": "2026-08-23T03:55:58.815Z"
+    },
+    {
+      "id": "grp-2",
+      "name": "Data Dynamics",
+      "code": "GRP-DATA",
+      "created_by": "usr-stu-3",
+      "created_at": "2026-08-23T03:55:58.816Z"
+    },
+    {
+      "id": "grp-3",
+      "name": "Neural Coders",
+      "code": "GRP-NEURAL",
+      "created_by": "usr-stu-5",
+      "created_at": "2026-08-23T03:55:58.816Z"
+    }
+  ],
+  "group_members": [
+    {
+      "id": "gm-1",
+      "group_id": "grp-1",
+      "user_id": "usr-stu-1",
+      "joined_at": "2026-08-23T03:55:58.816Z"
+    },
+    {
+      "id": "gm-2",
+      "group_id": "grp-1",
+      "user_id": "usr-stu-2",
+      "joined_at": "2026-08-23T03:55:58.817Z"
+    },
+    {
+      "id": "gm-3",
+      "group_id": "grp-2",
+      "user_id": "usr-stu-3",
+      "joined_at": "2026-08-23T03:55:58.817Z"
+    },
+    {
+      "id": "gm-4",
+      "group_id": "grp-2",
+      "user_id": "usr-stu-4",
+      "joined_at": "2026-08-23T03:55:58.817Z"
+    },
+    {
+      "id": "gm-5",
+      "group_id": "grp-3",
+      "user_id": "usr-stu-5",
+      "joined_at": "2026-08-23T03:55:58.817Z"
+    },
+    {
+      "id": "gm-6",
+      "group_id": "grp-3",
+      "user_id": "usr-stu-6",
+      "joined_at": "2026-08-23T03:55:58.818Z"
+    }
+  ],
+  "assignments": [
+    {
+      "id": "asg-1",
+      "title": "Assignment 1: Distributed Systems Architecture Design",
+      "description": "Design a microservice architecture for scalable group submission systems. Upload your architectural diagram PDF and report to OneDrive.",
+      "due_date": "2026-08-30T03:55:58.818Z",
+      "onedrive_link": "https://onedrive.live.com/share?id=Joineazy_Assignment_1_Folder",
+      "target_type": "ALL",
+      "created_by": "usr-prof-1",
+      "created_at": "2026-08-23T03:55:58.818Z"
+    },
+    {
+      "id": "asg-2",
+      "title": "Assignment 2: Full-Stack React & Node Integration",
+      "description": "Develop a responsive role-based frontend with Express API backend. Submit source code zip file via OneDrive.",
+      "due_date": "2026-09-06T03:55:58.818Z",
+      "onedrive_link": "https://onedrive.live.com/share?id=Joineazy_Assignment_2_Folder",
+      "target_type": "ALL",
+      "created_by": "usr-prof-1",
+      "created_at": "2026-08-23T03:55:58.818Z"
+    },
+    {
+      "id": "asg-3",
+      "title": "Special Research Lab: High-Performance Database Indexing",
+      "description": "Benchmark PostgreSQL vs SQLite indexing performance for concurrent group data. Scoped specifically for Team CyberPulse & Data Dynamics.",
+      "due_date": "2026-08-21T03:55:58.818Z",
+      "onedrive_link": "https://onedrive.live.com/share?id=Joineazy_Special_Lab_Folder",
+      "target_type": "SPECIFIC_GROUPS",
+      "created_by": "usr-prof-2",
+      "created_at": "2026-08-23T03:55:58.819Z"
+    }
+  ],
+  "assignment_target_groups": [
+    {
+      "id": "atg-1",
+      "assignment_id": "asg-3",
+      "group_id": "grp-1"
+    },
+    {
+      "id": "atg-2",
+      "assignment_id": "asg-3",
+      "group_id": "grp-2"
+    }
+  ],
+  "submissions": [
+    {
+      "id": "sub-1",
+      "assignment_id": "asg-1",
+      "group_id": "grp-1",
+      "submitted_by": "usr-stu-1",
+      "confirmed": true,
+      "notes": "Confirmed external OneDrive upload by Alex Johnson.",
+      "submitted_at": "2026-08-23T03:55:58.820Z"
+    },
+    {
+      "id": "sub-2",
+      "assignment_id": "asg-3",
+      "group_id": "grp-2",
+      "submitted_by": "usr-stu-3",
+      "confirmed": true,
+      "notes": "Confirmed external OneDrive submission by David Kim.",
+      "submitted_at": "2026-08-23T03:55:58.820Z"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+-- Joineazy PostgreSQL Initialization Schema DDL
+
+CREATE TABLE IF NOT EXISTS users (
+  id VARCHAR(64) PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  email VARCHAR(120) UNIQUE NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  role VARCHAR(20) NOT NULL CHECK (role IN ('STUDENT', 'ADMIN')),
+  student_id VARCHAR(50) UNIQUE,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS groups (
+  id VARCHAR(64) PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  code VARCHAR(20) UNIQUE,
+  created_by VARCHAR(64) REFERENCES users(id) ON DELETE CASCADE,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS group_members (
+  id VARCHAR(64) PRIMARY KEY,
+  group_id VARCHAR(64) REFERENCES groups(id) ON DELETE CASCADE,
+  user_id VARCHAR(64) REFERENCES users(id) ON DELETE CASCADE,
+  joined_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE(group_id, user_id)
+);
+
+CREATE TABLE IF NOT EXISTS assignments (
+  id VARCHAR(64) PRIMARY KEY,
+  title VARCHAR(200) NOT NULL,
+  description TEXT,
+  due_date TIMESTAMP NOT NULL,
+  onedrive_link TEXT NOT NULL,
+  target_type VARCHAR(20) DEFAULT 'ALL' CHECK (target_type IN ('ALL', 'SPECIFIC_GROUPS')),
+  created_by VARCHAR(64) REFERENCES users(id) ON DELETE CASCADE,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS assignment_target_groups (
+  id VARCHAR(64) PRIMARY KEY,
+  assignment_id VARCHAR(64) REFERENCES assignments(id) ON DELETE CASCADE,
+  group_id VARCHAR(64) REFERENCES groups(id) ON DELETE CASCADE,
+  UNIQUE(assignment_id, group_id)
+);
+
+CREATE TABLE IF NOT EXISTS submissions (
+  id VARCHAR(64) PRIMARY KEY,
+  assignment_id VARCHAR(64) REFERENCES assignments(id) ON DELETE CASCADE,
+  group_id VARCHAR(64) REFERENCES groups(id) ON DELETE CASCADE,
+  submitted_by VARCHAR(64) REFERENCES users(id) ON DELETE CASCADE,
+  confirmed BOOLEAN DEFAULT TRUE,
+  notes TEXT,
+  submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE(assignment_id, group_id)
+);
