@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Joineazy - Student, Group & Assignment Management System
 
 A role-based, modular full-stack web application designed for **Joineazy**. It enables students to form collaborative groups, manage members, and confirm assignment submissions via shared OneDrive links — while professors manage assignments, scope targeting, track submission status in real-time, and analyze performance metrics.
@@ -237,3 +238,6 @@ npm run dev
    - JWT tokens include user roles (`STUDENT`, `ADMIN`). Backend route middleware strictly enforces role authorization (`requireRole`).
 4. **Rich & Modern UX Design**:
    - Designed with glassmorphism panels, high-contrast dark themes, visual progress bars, interactive Recharts analytics graphs, and 1-click quick role switchers for effortless demonstration.
+=======
+# JojoManuelP-Task1
+>>>>>>> 87d1be29846b267555d442c0cf2ff0463334dd93
