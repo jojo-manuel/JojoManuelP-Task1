@@ -42,11 +42,28 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Internal Server Error', message: err.message });
 });
 
+// Ensure DB schema and seed is initialized
+let isSeeded = false;
+async function ensureDbInitialized() {
+  if (!isSeeded) {
+    await seedDatabase();
+    isSeeded = true;
+  }
+}
+
+app.use(async (req, res, next) => {
+  try {
+    await ensureDbInitialized();
+  } catch (e) {
+    console.error('[DB INIT ERROR]', e);
+  }
+  next();
+});
+
 // Start Server
 async function startServer() {
   try {
-    // Run DB schema DDL & initial seed
-    await seedDatabase();
+    await ensureDbInitialized();
 
     app.listen(PORT, () => {
       console.log(`=======================================================`);
@@ -59,4 +76,8 @@ async function startServer() {
   }
 }
 
-startServer();
+if (require.main === module) {
+  startServer();
+}
+
+module.exports = app;
